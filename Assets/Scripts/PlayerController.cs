@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     Vector3 input, moveDirection;
 
     public float moveSpeed = 10;
-    public float jumpHeight = 10;
-    public float gravity = 9.81f;
+    public float jumpHeight = 4.01f;
+    public float gravity = 60.2f;
     public float airControl = 10f;
 
     // Start is called before the first frame update
