@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,21 +55,5 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(moveDirection * Time.deltaTime);
 
-        if (animator != null) //if this player is animated
-                              //(so it doesn't mess up the existing first person controller)
-        {
-            if (transform.position.y > -0.9) //hard-coded for now, probably a better way to do this
-            {
-                animator.SetInteger("animState", 2); //jump
-            }
-            else if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-            {
-                animator.SetInteger("animState", 1); //walk
-            }
-            else
-            {
-                animator.SetInteger("animState", 0); //idle
-            }
-        }
     }
 }
